@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		719FD3C3C5002FE97042C291 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D2B9097D0ACD12479BEA0F /* libPods.a */; };
+		FBA061F91BB9E46300F3267D /* GravityPanControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061F71BB9E46300F3267D /* GravityPanControl.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA061FA1BB9E46300F3267D /* RobotRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA061FD1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA061FE1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA061FF1BB9E73B00F3267D /* RobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FC1BB9E73B00F3267D /* RobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062001BB9E73B00F3267D /* RobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FC1BB9E73B00F3267D /* RobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062041BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062051BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062061BB9EC0700F3267D /* SimulatedBrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062071BB9EC0C00F3267D /* BrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062081BB9EC1000F3267D /* RobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FC1BB9E73B00F3267D /* RobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0620A1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0620B1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0620C1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062101BB9F0E700F3267D /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0620F1BB9F0E700F3267D /* BallView.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062111BB9F0E800F3267D /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0620F1BB9F0E700F3267D /* BallView.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062121BB9F0E800F3267D /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0620F1BB9F0E700F3267D /* BallView.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0621D1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0621E1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0621F1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062221BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062231BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA062241BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
+		FBDAEEC51BB9E25500066995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAEEC41BB9E25500066995 /* AppDelegate.swift */; };
+		FBDAEECA1BB9E25500066995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEEC81BB9E25500066995 /* Main.storyboard */; };
+		FBDAEECC1BB9E25500066995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEECB1BB9E25500066995 /* Assets.xcassets */; };
+		FBDAEECF1BB9E25500066995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEECD1BB9E25500066995 /* LaunchScreen.storyboard */; };
+		FBDAEEDA1BB9E25500066995 /* BrickBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAEED91BB9E25500066995 /* BrickBotTests.swift */; };
+		FBDAEEE51BB9E25500066995 /* BrickBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAEEE41BB9E25500066995 /* BrickBotUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBDAEED61BB9E25500066995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBDAEEB91BB9E25500066995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBDAEEC01BB9E25500066995;
+			remoteInfo = BrickBot;
+		};
+		FBDAEEE11BB9E25500066995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBDAEEB91BB9E25500066995 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBDAEEC01BB9E25500066995;
+			remoteInfo = BrickBot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7AD7BD9A2BC65C41F90D422D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8A992C48830A0C8685274351 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E3D2B9097D0ACD12479BEA0F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBA061F71BB9E46300F3267D /* GravityPanControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityPanControl.swift; sourceTree = "<group>"; };
+		FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotRemoteViewController.swift; sourceTree = "<group>"; };
+		FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickBotRobot.swift; sourceTree = "<group>"; };
+		FBA061FC1BB9E73B00F3267D /* RobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotManager.swift; sourceTree = "<group>"; };
+		FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatedBrickBotRobot.swift; sourceTree = "<group>"; };
+		FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatedRobotManager.swift; sourceTree = "<group>"; };
+		FBA0620F1BB9F0E700F3267D /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
+		FBA062131BBA019700F3267D /* BrickBot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrickBot-Bridging-Header.h"; sourceTree = "<group>"; };
+		FBA062141BBA019700F3267D /* BrickBotTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrickBotTests-Bridging-Header.h"; path = "../BrickBot/BrickBotTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		FBA062151BBA019700F3267D /* BrickBotUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrickBotUITests-Bridging-Header.h"; path = "../BrickBot/BrickBotUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanRobotManager.swift; sourceTree = "<group>"; };
+		FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+BrickBot.swift"; sourceTree = "<group>"; };
+		FBDAEEC11BB9E25500066995 /* BrickBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBDAEEC41BB9E25500066995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBDAEEC91BB9E25500066995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBDAEECB1BB9E25500066995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBDAEECE1BB9E25500066995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FBDAEED01BB9E25500066995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDAEED51BB9E25500066995 /* BrickBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrickBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBDAEED91BB9E25500066995 /* BrickBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickBotTests.swift; sourceTree = "<group>"; };
+		FBDAEEDB1BB9E25500066995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDAEEE01BB9E25500066995 /* BrickBotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrickBotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBDAEEE41BB9E25500066995 /* BrickBotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickBotUITests.swift; sourceTree = "<group>"; };
+		FBDAEEE61BB9E25500066995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBDAEEBE1BB9E25500066995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719FD3C3C5002FE97042C291 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDAEED21BB9E25500066995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDAEEDD1BB9E25500066995 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		504A36F341E71C8DA67B8086 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3D2B9097D0ACD12479BEA0F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65DABE35B63F029E151552A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AD7BD9A2BC65C41F90D422D /* Pods.debug.xcconfig */,
+				8A992C48830A0C8685274351 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FBA062021BB9EBDB00F3267D /* Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */,
+				FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */,
+			);
+			name = Simulator;
+			sourceTree = "<group>";
+		};
+		FBA0620D1BB9F02400F3267D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBDAEEC41BB9E25500066995 /* AppDelegate.swift */,
+				FBDAEECB1BB9E25500066995 /* Assets.xcassets */,
+				FBDAEECD1BB9E25500066995 /* LaunchScreen.storyboard */,
+				FBDAEED01BB9E25500066995 /* Info.plist */,
+				FBA062131BBA019700F3267D /* BrickBot-Bridging-Header.h */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		FBA0620E1BB9F0BE00F3267D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FBA0620F1BB9F0E700F3267D /* BallView.swift */,
+				FBA061F71BB9E46300F3267D /* GravityPanControl.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FBA0621B1BBA0BE600F3267D /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */,
+			);
+			name = Bean;
+			sourceTree = "<group>";
+		};
+		FBA062201BBA132100F3267D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FBDAEEB81BB9E25500066995 = {
+			isa = PBXGroup;
+			children = (
+				FBDAEEC31BB9E25500066995 /* BrickBot */,
+				FBDAEED81BB9E25500066995 /* BrickBotTests */,
+				FBDAEEE31BB9E25500066995 /* BrickBotUITests */,
+				FBDAEEC21BB9E25500066995 /* Products */,
+				65DABE35B63F029E151552A3 /* Pods */,
+				504A36F341E71C8DA67B8086 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FBDAEEC21BB9E25500066995 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBDAEEC11BB9E25500066995 /* BrickBot.app */,
+				FBDAEED51BB9E25500066995 /* BrickBotTests.xctest */,
+				FBDAEEE01BB9E25500066995 /* BrickBotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBDAEEC31BB9E25500066995 /* BrickBot */ = {
+			isa = PBXGroup;
+			children = (
+				FBDAEEC81BB9E25500066995 /* Main.storyboard */,
+				FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */,
+				FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */,
+				FBA061FC1BB9E73B00F3267D /* RobotManager.swift */,
+				FBA0621B1BBA0BE600F3267D /* Bean */,
+				FBA0620E1BB9F0BE00F3267D /* Views */,
+				FBA062201BBA132100F3267D /* Extensions */,
+				FBA062021BB9EBDB00F3267D /* Simulator */,
+				FBA0620D1BB9F02400F3267D /* Support Files */,
+			);
+			path = BrickBot;
+			sourceTree = "<group>";
+		};
+		FBDAEED81BB9E25500066995 /* BrickBotTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBA062141BBA019700F3267D /* BrickBotTests-Bridging-Header.h */,
+				FBDAEED91BB9E25500066995 /* BrickBotTests.swift */,
+				FBDAEEDB1BB9E25500066995 /* Info.plist */,
+			);
+			path = BrickBotTests;
+			sourceTree = "<group>";
+		};
+		FBDAEEE31BB9E25500066995 /* BrickBotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FBA062151BBA019700F3267D /* BrickBotUITests-Bridging-Header.h */,
+				FBDAEEE41BB9E25500066995 /* BrickBotUITests.swift */,
+				FBDAEEE61BB9E25500066995 /* Info.plist */,
+			);
+			path = BrickBotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBDAEEC01BB9E25500066995 /* BrickBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBDAEEE91BB9E25500066995 /* Build configuration list for PBXNativeTarget "BrickBot" */;
+			buildPhases = (
+				7ABC66A8A364AEB050EB86B1 /* Check Pods Manifest.lock */,
+				FBDAEEBD1BB9E25500066995 /* Sources */,
+				FBDAEEBE1BB9E25500066995 /* Frameworks */,
+				FBDAEEBF1BB9E25500066995 /* Resources */,
+				41E0C9A9B11BE0F06E44954A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrickBot;
+			productName = BrickBot;
+			productReference = FBDAEEC11BB9E25500066995 /* BrickBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBDAEED41BB9E25500066995 /* BrickBotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBDAEEEC1BB9E25500066995 /* Build configuration list for PBXNativeTarget "BrickBotTests" */;
+			buildPhases = (
+				FBDAEED11BB9E25500066995 /* Sources */,
+				FBDAEED21BB9E25500066995 /* Frameworks */,
+				FBDAEED31BB9E25500066995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBDAEED71BB9E25500066995 /* PBXTargetDependency */,
+			);
+			name = BrickBotTests;
+			productName = BrickBotTests;
+			productReference = FBDAEED51BB9E25500066995 /* BrickBotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FBDAEEDF1BB9E25500066995 /* BrickBotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBDAEEEF1BB9E25500066995 /* Build configuration list for PBXNativeTarget "BrickBotUITests" */;
+			buildPhases = (
+				FBDAEEDC1BB9E25500066995 /* Sources */,
+				FBDAEEDD1BB9E25500066995 /* Frameworks */,
+				FBDAEEDE1BB9E25500066995 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBDAEEE21BB9E25500066995 /* PBXTargetDependency */,
+			);
+			name = BrickBotUITests;
+			productName = BrickBotUITests;
+			productReference = FBDAEEE01BB9E25500066995 /* BrickBotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBDAEEB91BB9E25500066995 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Smallwisdom;
+				TargetAttributes = {
+					FBDAEEC01BB9E25500066995 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = QMHQD2VUPF;
+					};
+					FBDAEED41BB9E25500066995 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = FBDAEEC01BB9E25500066995;
+					};
+					FBDAEEDF1BB9E25500066995 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = FBDAEEC01BB9E25500066995;
+					};
+				};
+			};
+			buildConfigurationList = FBDAEEBC1BB9E25500066995 /* Build configuration list for PBXProject "BrickBot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBDAEEB81BB9E25500066995;
+			productRefGroup = FBDAEEC21BB9E25500066995 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBDAEEC01BB9E25500066995 /* BrickBot */,
+				FBDAEED41BB9E25500066995 /* BrickBotTests */,
+				FBDAEEDF1BB9E25500066995 /* BrickBotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBDAEEBF1BB9E25500066995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBDAEECF1BB9E25500066995 /* LaunchScreen.storyboard in Resources */,
+				FBDAEECC1BB9E25500066995 /* Assets.xcassets in Resources */,
+				FBDAEECA1BB9E25500066995 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDAEED31BB9E25500066995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDAEEDE1BB9E25500066995 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41E0C9A9B11BE0F06E44954A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7ABC66A8A364AEB050EB86B1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBDAEEBD1BB9E25500066995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA0621D1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */,
+				FBA061FD1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */,
+				FBA062041BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */,
+				FBA061FF1BB9E73B00F3267D /* RobotManager.swift in Sources */,
+				FBA061F91BB9E46300F3267D /* GravityPanControl.swift in Sources */,
+				FBDAEEC51BB9E25500066995 /* AppDelegate.swift in Sources */,
+				FBA0620A1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */,
+				FBA061FA1BB9E46300F3267D /* RobotRemoteViewController.swift in Sources */,
+				FBA062221BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */,
+				FBA062101BB9F0E700F3267D /* BallView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDAEED11BB9E25500066995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA062231BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */,
+				FBA0620B1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */,
+				FBA061FE1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */,
+				FBA062051BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */,
+				FBA0621E1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */,
+				FBA062111BB9F0E800F3267D /* BallView.swift in Sources */,
+				FBDAEEDA1BB9E25500066995 /* BrickBotTests.swift in Sources */,
+				FBA062001BB9E73B00F3267D /* RobotManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDAEEDC1BB9E25500066995 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA062241BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */,
+				FBA0620C1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */,
+				FBDAEEE51BB9E25500066995 /* BrickBotUITests.swift in Sources */,
+				FBA062061BB9EC0700F3267D /* SimulatedBrickBotRobot.swift in Sources */,
+				FBA0621F1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */,
+				FBA062121BB9F0E800F3267D /* BallView.swift in Sources */,
+				FBA062081BB9EC1000F3267D /* RobotManager.swift in Sources */,
+				FBA062071BB9EC0C00F3267D /* BrickBotRobot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBDAEED71BB9E25500066995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBDAEEC01BB9E25500066995 /* BrickBot */;
+			targetProxy = FBDAEED61BB9E25500066995 /* PBXContainerItemProxy */;
+		};
+		FBDAEEE21BB9E25500066995 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBDAEEC01BB9E25500066995 /* BrickBot */;
+			targetProxy = FBDAEEE11BB9E25500066995 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBDAEEC81BB9E25500066995 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBDAEEC91BB9E25500066995 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FBDAEECD1BB9E25500066995 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBDAEECE1BB9E25500066995 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBDAEEE71BB9E25500066995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBDAEEE81BB9E25500066995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBDAEEEA1BB9E25500066995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AD7BD9A2BC65C41F90D422D /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = BrickBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallwisdom.BrickBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBot-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FBDAEEEB1BB9E25500066995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A992C48830A0C8685274351 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = BrickBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallwisdom.BrickBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBot-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		FBDAEEED1BB9E25500066995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = BrickBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallwisdom.BrickBotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBotTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrickBot.app/BrickBot";
+			};
+			name = Debug;
+		};
+		FBDAEEEE1BB9E25500066995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = BrickBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallwisdom.BrickBotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBotTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrickBot.app/BrickBot";
+			};
+			name = Release;
+		};
+		FBDAEEF01BB9E25500066995 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = BrickBotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallwisdom.BrickBotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBotUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = BrickBot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		FBDAEEF11BB9E25500066995 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = BrickBotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.smallwisdom.BrickBotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBotUITests-Bridging-Header.h";
+				TEST_TARGET_NAME = BrickBot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBDAEEBC1BB9E25500066995 /* Build configuration list for PBXProject "BrickBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBDAEEE71BB9E25500066995 /* Debug */,
+				FBDAEEE81BB9E25500066995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBDAEEE91BB9E25500066995 /* Build configuration list for PBXNativeTarget "BrickBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBDAEEEA1BB9E25500066995 /* Debug */,
+				FBDAEEEB1BB9E25500066995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBDAEEEC1BB9E25500066995 /* Build configuration list for PBXNativeTarget "BrickBotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBDAEEED1BB9E25500066995 /* Debug */,
+				FBDAEEEE1BB9E25500066995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBDAEEEF1BB9E25500066995 /* Build configuration list for PBXNativeTarget "BrickBotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBDAEEF01BB9E25500066995 /* Debug */,
+				FBDAEEF11BB9E25500066995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBDAEEB91BB9E25500066995 /* Project object */;
+}

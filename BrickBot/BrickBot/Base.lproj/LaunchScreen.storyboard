@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Robot_1380" translatesAutoresizingMaskIntoConstraints="NO" id="lTm-GB-IH4">
+                                <rect key="frame" x="60" y="60" width="480" height="480"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lTm-GB-IH4" secondAttribute="height" multiplier="1:1" id="juY-n4-hKG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015 Smallwisdom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjo-uq-XBn">
+                                <rect key="frame" x="217.5" y="548" width="165.5" height="13.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brick Bot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-5S-tfb">
+                                <rect key="frame" x="248" y="487" width="104.5" height="32.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J5c-5S-tfb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8pZ-UE-IDQ"/>
+                            <constraint firstItem="Tjo-uq-XBn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CSM-hH-Jfc"/>
+                            <constraint firstItem="lTm-GB-IH4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="40" id="DIN-DG-KIQ"/>
+                            <constraint firstItem="lTm-GB-IH4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QlH-X2-BgD"/>
+                            <constraint firstItem="Tjo-uq-XBn" firstAttribute="top" secondItem="lTm-GB-IH4" secondAttribute="bottom" constant="8" id="Weu-e3-f0T"/>
+                            <constraint firstItem="lTm-GB-IH4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="40" id="Zck-lq-vQc"/>
+                            <constraint firstItem="J5c-5S-tfb" firstAttribute="bottom" secondItem="lTm-GB-IH4" secondAttribute="bottom" constant="-20" id="naO-7J-Sam"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="327"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Robot_1380" width="1380" height="1380"/>
+    </resources>
+</document>
