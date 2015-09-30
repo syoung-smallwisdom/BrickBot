@@ -65,10 +65,33 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
     }
     
     func connectNextAvailableRobot() {
+        // TODO: FIXME!! This will only work for 2 robots. syoung 10/02/2015
         guard let nextRobot = discoveredRobots.values.filter({$0.identifier.UUIDString != self.lastConnectedRobotId}).first else { return }
         connectRobot(nextRobot)
     }
     
+    var readMotorCalibrationCompletion: ((BrickBotMotorCalibration?) ->())?
+    
+    func readMotorCalibration(completion:(BrickBotMotorCalibration?) ->()) {
+        guard let bean = connectedRobot as? PTDBean else {
+            completion(nil)
+            return
+        }
+        
+        readMotorCalibrationCompletion = completion
+        bean.readScratchBank(MotorCalibrationScratchBank)
+    }
+    
+    //    public func fetchReminders(reminderList:HPReminderList, completion:([AnyObject]?) ->()) {
+    //    if (self.eventAccessGranted) {
+    //    let calendar = self.eventStore.calendarWithIdentifier(reminderList.calendarId)
+    //    let predicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [calendar])
+    //    self.eventStore.fetchRemindersMatchingPredicate(predicate, completion:completion);
+    //    }
+    //    else {
+    //    completion(nil);
+    //    }
+    //    }
     
     // MARK: Internal
     
@@ -200,6 +223,7 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         }
         else {
             // Query the sketch name and robot name
+            bean.readScratchBank(RobotNameScratchBank);
             bean.readArduinoSketchInfo()
         }
     }
@@ -222,9 +246,66 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
             beanManager?.disconnectBean(bean, error: nil)
         }
     }
-
+    
+    func bean(bean: PTDBean!, didUpdateScratchBank bank:Int, data:NSData) {
+        
+        switch (bank) {
+        case RobotNameScratchBank:
+            bean.setRobotNameWithData(data)
+            
+        case MotorCalibrationScratchBank:
+            let motorCalibration = BrickBotMotorCalibration(data: data)
+            readMotorCalibrationCompletion?(motorCalibration)
+            
+        default:
+            break
+        }
+    }
+    
+    func bean(bean: PTDBean!, error: NSError!) {
+        print("Bean ERROR: \(error)")
+    }
 }
 
+
+
 extension PTDBean: BrickBotRobot {
+    
+    // Robot name is stored locally in user defaults
+    var robotName: String? {
+        get {
+            return NSUserDefaults.standardUserDefaults().stringForKey(robotNameKey)
+        }
+        set (newRobotName) {
+            NSUserDefaults.standardUserDefaults().setValue(newRobotName, forKey: robotNameKey)
+        }
+    }
+    private var robotNameKey: String {
+        return "\(self.identifier.UUIDString)_RobotNameKey"
+    }
+    
+    var maxRobotNameLength: Int {
+        return 10
+    }
+    
+    func setRobotNameWithData(data: NSData?) {
+        guard let data = data where data.length > 0 && (data != emptyBank) else { return }
+        robotName = String(data:data, encoding:NSUTF16StringEncoding)
+    }
+    
+    func saveRobotName(robotName: String) {
+        guard robotName.lengthOfBytesUsingEncoding(NSUTF16StringEncoding) < maxRobotNameLength * 2 else {
+            assertionFailure("Robot name is too long")
+            return
+        }
+        self.robotName = robotName
+        self.setScratchBank(RobotNameScratchBank, data: robotName.dataUsingEncoding(NSUTF16StringEncoding))
+    }
+    
+    func saveMotorCalibration(calibration: BrickBotMotorCalibration) {
+        let bytes = calibration.bytes()
+        let data = NSData(bytes:bytes, length:bytes.count)
+        self.setScratchBank(MotorCalibrationScratchBank, data: data)
+    }
     
 }

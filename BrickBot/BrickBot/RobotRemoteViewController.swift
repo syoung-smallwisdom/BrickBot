@@ -11,14 +11,18 @@ import UIKit
 class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
 
     // UI
-    @IBOutlet weak var screenButton: GravityPanControl!
+    @IBOutlet weak var screenButton: SWPanTiltControl!
     @IBOutlet weak var autopilotSwitch: UISwitch!
     @IBOutlet weak var ballView: BallView!
     @IBOutlet weak var ballX: NSLayoutConstraint!
     @IBOutlet weak var ballY: NSLayoutConstraint!
+    @IBOutlet weak var settingsButton: SWSettingsButton!
+    @IBOutlet weak var robotNameLabel: UILabel!
     
     // Robot
-    let robotManager = BeanRobotManager()
+    lazy var robotManager: RobotManager = {
+        return (UIApplication.isSimulator() ? SimulatedRobotManager() : BeanRobotManager()) as RobotManager
+        }()
     var robot:BrickBotRobot? {
         return robotManager.connectedRobot
     }
@@ -26,8 +30,11 @@ class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Connect to the robot manager
+        robotNameLabel.text = ""
+        
+        // Connect to the robot manager on launch
         robotManager.delegate = self
+        settingsButton.enabled = (robotManager.connectedRobot != nil)
         robotManager.connect()
         
         // When the app enters/exits foreground we want to disconnect the remote control
@@ -36,21 +43,21 @@ class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
     }
     
     @IBAction func didTouchUp(sender: AnyObject) {
-        ballView.backgroundColor = UIColor.redColor()
-        ballPosition = CGPointZero
+        screenButton.position = CGPointZero
+        didChangePosition(sender)
     }
     
     @IBAction func didTouchDown(sender: AnyObject) {
-        ballView.backgroundColor = UIColor.greenColor();
-        ballPosition = CGPointZero
+        screenButton.position = CGPointZero
+        didChangePosition(sender)
     }
     
-    @IBAction func didChangePosition(sender: GravityPanControl) {
-        ballPosition = sender.position
+    @IBAction func didChangePosition(sender: AnyObject) {
+        ballPosition = screenButton.position
     }
     
-    @IBAction func autopilotChanged(sender: UISwitch) {
-        robot?.sendAutopilotOn(sender.on)
+    @IBAction func autopilotChanged(sender: AnyObject) {
+        robot?.sendAutopilotOn(autopilotSwitch.on)
     }
     
     var remoteOn:Bool {
@@ -79,15 +86,26 @@ class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
         }
     }
     
+    // Turn off the autopilot when view will disappear
+    func turnOffMotors() {
+        if (autopilotOn) {
+            autopilotSwitch.on = false;
+            autopilotChanged(autopilotSwitch)
+        }
+    }
     
-    // MARK: RobotManagerDelegate
+    
+    // MARK: - RobotManagerDelegate
     
     func didConnectRobot(robotManager: RobotManager, robot: BrickBotRobot) {
         ballView.connected = true
+        settingsButton.enabled = true
+        robotNameLabel.text = robot.robotName
     }
     
     func didDisconnectRobot(robotManager: RobotManager, robot: BrickBotRobot) {
         ballView.connected = false
+        settingsButton.enabled = false
     }
     
     func didTimeoutDiscovery(robotManager: RobotManager) {
@@ -96,15 +114,31 @@ class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
     }
     
     
-    // MARK: App state handling
+    // MARK: - App state handling
     
     func willEnterForeground() {
         autopilotSwitch.on = false
         robotManager.connect()
+        settingsButton.enabled = (robotManager.connectedRobot != nil)
     }
     
     func didEnterBackground() {
         robotManager.disconnect()
+        settingsButton.enabled = false
+    }
+    
+
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let settingVC = segue.destinationRootViewController() as? RobotSettingsViewController {
+            turnOffMotors()
+            settingVC.robotManager = self.robotManager
+        }
+        else {
+            assertionFailure("Unrecognized segue")
+        }
     }
     
 }

@@ -51,6 +51,12 @@ protocol RobotManager {
     * In the case where multiple robots are discovered, connect to the next one in the list.
     */
     func connectNextAvailableRobot()
+    
+    /**
+    * Read the motor calibration data for the currently connected robot
+    */
+    func readMotorCalibration(completion:(BrickBotMotorCalibration?) ->())
+    
 }
 
 

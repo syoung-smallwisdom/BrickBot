@@ -15,8 +15,6 @@ class BallView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = self.bounds.size.height/2.0;
-        self.layer.borderColor = UIColor.blackColor().CGColor
-        self.layer.borderWidth = 1.0
     }
     
     var position: CGPoint = CGPointZero {
