@@ -9,13 +9,15 @@ import UIKit
 
 @IBDesignable
 class CalibrationDial: SWPanControl {
+    
+    @IBOutlet weak var valueLabel: UILabel?
 
     @IBInspectable var dialPosition: CGFloat {
         get {
             return position.x;
         }
         set (dialPosition) {
-            position.x = dialPosition
+            position.x = round(dialPosition*100)/100;
             updateLayerProperties()
         }
     }
@@ -24,6 +26,11 @@ class CalibrationDial: SWPanControl {
         didSet {
             updateLayerProperties()
         }
+    }
+    
+    override func updatePosition(dx dx: CGFloat, dy: CGFloat) {
+        let ddx = (dialPosition >= 0) ? dx - dy : dx + dy
+        super.updatePosition(dx: round(ddx*100)/100, dy: 0)
     }
     
     // MARK: Draw the dial
@@ -62,6 +69,7 @@ class CalibrationDial: SWPanControl {
     }
     
     private func updateLayerProperties() {
+        valueLabel?.text = String(dialPosition)
         if leftLayer != nil {
             leftLayer.path = calculateLeftPath().CGPath
             leftLayer.fillColor = UIColor.redColor().CGColor

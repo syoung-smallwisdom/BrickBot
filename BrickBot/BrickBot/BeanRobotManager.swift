@@ -8,15 +8,15 @@
 
 import UIKit
 
-final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PTDBeanDelegate {
+final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, PTDBeanDelegate {
     
     // MARK: RobotManager
     
-    var delegate: RobotManagerDelegate?
+    weak var delegate: BBRobotManagerDelegate?
     
-    var connectedRobot: BrickBotRobot?
+    var connectedRobot: BBRobot?
     
-    var discoveredRobots: [NSUUID: BrickBotRobot] = [:]
+    var discoveredRobots: [NSUUID: BBRobot] = [:]
 
     func connect() {
         if (beanManager == nil) {
@@ -38,7 +38,7 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         }
     }
     
-    func connectRobot(robot: BrickBotRobot) {
+    func connectRobot(robot: BBRobot) {
         guard !robot.connected || (robot.identifier != connectedRobot?.identifier) else {
             return
         }
@@ -70,28 +70,18 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         connectRobot(nextRobot)
     }
     
-    var readMotorCalibrationCompletion: ((BrickBotMotorCalibration?) ->())?
+    var readMotorCalibrationCompletion: ((BBMotorCalibration?) ->())?
     
-    func readMotorCalibration(completion:(BrickBotMotorCalibration?) ->()) {
+    func readMotorCalibration(completion:(BBMotorCalibration?) ->()) {
         guard let bean = connectedRobot as? PTDBean else {
             completion(nil)
             return
         }
         
         readMotorCalibrationCompletion = completion
-        bean.readScratchBank(MotorCalibrationScratchBank)
+        bean.readScratchBank(BBScratchBank.MotorCalibration.rawValue)
     }
     
-    //    public func fetchReminders(reminderList:HPReminderList, completion:([AnyObject]?) ->()) {
-    //    if (self.eventAccessGranted) {
-    //    let calendar = self.eventStore.calendarWithIdentifier(reminderList.calendarId)
-    //    let predicate = self.eventStore.predicateForIncompleteRemindersWithDueDateStarting(nil, ending: nil, calendars: [calendar])
-    //    self.eventStore.fetchRemindersMatchingPredicate(predicate, completion:completion);
-    //    }
-    //    else {
-    //    completion(nil);
-    //    }
-    //    }
     
     // MARK: Internal
     
@@ -99,11 +89,11 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
     var discoveredBeanUUIDs: Set<String> = []
     var timer: NSTimer?
     
-    func didConnectRobot(robot: BrickBotRobot) {
+    func didConnectRobot(robot: BBRobot) {
         
         discoveredRobots[robot.identifier] = robot
         
-        func shouldConnectRobot(robot: BrickBotRobot) -> Bool {
+        func shouldConnectRobot(robot: BBRobot) -> Bool {
             if (connectedRobot == nil) {
                 let lastId = lastConnectedRobotId
                 return (lastId == nil) || (lastId == robot.identifier.UUIDString)
@@ -117,6 +107,11 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
             connectedRobot = robot
             lastConnectedRobotId = robot.identifier.UUIDString
             self.delegate?.didConnectRobot(self, robot: robot)
+            
+            // Query the name of the robot and the motor calibration
+            let bean = robot as! PTDBean
+            bean.readScratchBank(BBScratchBank.MotorCalibration.rawValue);
+            bean.readScratchBank(BBScratchBank.RobotName.rawValue);
         }
         else {
             resetTimer()
@@ -124,7 +119,7 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         }
     }
     
-    func didDisconnectRobot(robot: BrickBotRobot) {
+    func didDisconnectRobot(robot: BBRobot) {
         if (connectedRobot?.identifier == robot.identifier) {
             connectedRobot = nil
             self.delegate?.didDisconnectRobot(self, robot: robot)
@@ -146,7 +141,7 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         }
     }
     
-    func connectPeriperal(robot: BrickBotRobot!) {
+    func connectPeriperal(robot: BBRobot!) {
         guard let bean = robot as? PTDBean else {
             assertionFailure("Trying to connect a robot that is not a PTDBean")
             return
@@ -159,7 +154,7 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         }
     }
     
-    func disconnectPeriperal(robot: BrickBotRobot!) {
+    func disconnectPeriperal(robot: BBRobot!) {
         guard let bean = robot as? PTDBean else {
             assertionFailure("Trying to disconnect a robot that is not a PTDBean")
             return
@@ -182,7 +177,22 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         self.delegate?.didTimeoutDiscovery(self)
     }
     
-    
+    // For now, just hardcode the SketchId for a BrickBot robot.
+    let BrickBotSketchIdPrefix = "BrickBot_"
+    func didReadSketchId(bean: PTDBean!, data: NSData) {
+        
+        // Check the data in the first scratch bank. If the data is not empty and the 
+        // sketchId starts with the sketch ID we are looking for then connect.
+        if let name = BeanHelper.convertScratchDataToString(data, encoding: NSUTF8StringEncoding) where name.hasPrefix(BrickBotSketchIdPrefix) {
+            // This is a robot bean, store it's type and add it to the list of known robots
+            didConnectRobot(bean)
+        }
+        else {
+            // Otherwise, disconnect
+            beanManager?.disconnectBean(bean, error: nil)
+        }
+    }
+
     // MARK: PTDBeanManagerDelegate
     
     func beanManagerDidUpdateState(beanManager: PTDBeanManager!) {
@@ -223,8 +233,8 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
         }
         else {
             // Query the sketch name and robot name
-            bean.readScratchBank(RobotNameScratchBank);
             bean.readArduinoSketchInfo()
+            bean.readScratchBank(BBScratchBank.SketchId.rawValue);
         }
     }
     
@@ -237,75 +247,115 @@ final class BeanRobotManager: NSObject, RobotManager, PTDBeanManagerDelegate, PT
     // MARK: PTDBeanDelegate
     
     func bean(bean: PTDBean!, didUpdateSketchName name: String!, dateProgrammed date: NSDate!, crc32 crc: UInt32) {
-        if name.hasPrefix("sketch_brickBot") {
-            // This is a robot bean, store it's type and add it to the list of known robots
-            didConnectRobot(bean)
-        }
-        else {
-            // Otherwise, disconnect
-            beanManager?.disconnectBean(bean, error: nil)
-        }
+        print("\ndidUpdateSketchName name:\(name)")
     }
     
     func bean(bean: PTDBean!, didUpdateScratchBank bank:Int, data:NSData) {
+
+        let mod = data.length%2;
         
-        switch (bank) {
-        case RobotNameScratchBank:
-            bean.setRobotNameWithData(data)
+        print("\ndidUpdateScratchBank bank:\(bank) data:\(data) mod:\(mod)")
+        
+        // Check that this is a scratch bank that is reserved, otherwise ignore
+        guard let scratchBank = BBScratchBank(rawValue: bank) else { return }
+
+        switch (scratchBank) {
+        case .SketchId:
+            didReadSketchId(bean, data: data)
             
-        case MotorCalibrationScratchBank:
-            let motorCalibration = BrickBotMotorCalibration(data: data)
+        case .RobotName:
+            bean.didReadRobotName(data)
+            
+        case .MotorCalibration:
+            bean.didReadMotorCalibrationData(data)
+            let motorCalibration = BBMotorCalibration(data: bean.motorCalibrationData)
             readMotorCalibrationCompletion?(motorCalibration)
-            
-        default:
-            break
         }
     }
     
     func bean(bean: PTDBean!, error: NSError!) {
         print("Bean ERROR: \(error)")
     }
+    
+    func bean(bean: PTDBean!, serialDataReceived data: NSData!) {
+        if let debugStr = String(data:data, encoding:NSUTF8StringEncoding)  {
+            print("\n\(debugStr)")
+        }
+    }
+}
+
+struct BeanHelper {
+    
+    /**
+    * Check the scratch data string for 0x00 padding byte at the end or zero length
+    */
+    static func convertScratchDataToString(data: NSData, encoding: NSStringEncoding) -> String? {
+        
+        guard (data.length > 0) else { return nil }
+        
+        // C++ Arduino string is zero padded so strip that char if necessary
+        var bytes = [UInt8](count: data.length, repeatedValue: 0)
+        data.getBytes(&bytes, length:data.length)
+        
+        var range = NSMakeRange(0, data.length);
+        if (bytes.count > 2 && bytes[bytes.count - 1] == 0x00) {
+            range.length -= 1;
+        }
+        
+        let str = String(data: data.subdataWithRange(range), encoding: encoding)
+        return str
+    }
 }
 
 
-
-extension PTDBean: BrickBotRobot {
+extension PTDBean: BBRobot {
     
-    // Robot name is stored locally in user defaults
-    var robotName: String? {
+    // Robot name and motor calibration are stored locally in user defaults. The Bean doesn't save 
+    // scratch bank data across power resets so this information is saved to the iOS device as a backup.
+    
+    public var robotName: String? {
         get {
             return NSUserDefaults.standardUserDefaults().stringForKey(robotNameKey)
         }
-        set (newRobotName) {
-            NSUserDefaults.standardUserDefaults().setValue(newRobotName, forKey: robotNameKey)
+        set (newValue) {
+            NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: robotNameKey)
         }
     }
     private var robotNameKey: String {
         return "\(self.identifier.UUIDString)_RobotNameKey"
     }
     
-    var maxRobotNameLength: Int {
-        return 10
-    }
-    
-    func setRobotNameWithData(data: NSData?) {
-        guard let data = data where data.length > 0 && (data != emptyBank) else { return }
-        robotName = String(data:data, encoding:NSUTF16StringEncoding)
-    }
-    
-    func saveRobotName(robotName: String) {
-        guard robotName.lengthOfBytesUsingEncoding(NSUTF16StringEncoding) < maxRobotNameLength * 2 else {
-            assertionFailure("Robot name is too long")
-            return
+    public var motorCalibrationData: NSData?  {
+        get {
+            return NSUserDefaults.standardUserDefaults().objectForKey(motorCalibrationKey) as? NSData
         }
-        self.robotName = robotName
-        self.setScratchBank(RobotNameScratchBank, data: robotName.dataUsingEncoding(NSUTF16StringEncoding))
+        set (newValue) {
+            NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: motorCalibrationKey)
+        }
+    }
+    private var motorCalibrationKey: String {
+        return "\(self.identifier.UUIDString)_MotorCalibrationKey"
     }
     
-    func saveMotorCalibration(calibration: BrickBotMotorCalibration) {
-        let bytes = calibration.bytes()
-        let data = NSData(bytes:bytes, length:bytes.count)
-        self.setScratchBank(MotorCalibrationScratchBank, data: data)
+    func didReadRobotName(inData:NSData) {
+        if let name = BeanHelper.convertScratchDataToString(inData, encoding: BBNameStringEncoding) {
+            self.robotName = name;
+        }
+        else if let name = self.robotName {
+            let data = name.dataUsingEncoding(BBNameStringEncoding)
+            self.setScratchBank(BBScratchBank.RobotName.rawValue, data: data)
+        }
     }
     
+    func didReadMotorCalibrationData(data:NSData) {
+        if (data.length >= BBMotorCalibrationState.Count.rawValue) {
+            self.motorCalibrationData = data;
+        }
+        else if let data = self.motorCalibrationData {
+            // set the scratch bank and then reset the calibration to update
+            self.setScratchBank(BBScratchBank.MotorCalibration.rawValue, data: data)
+            self.sendResetCalibration()
+        }
+    }
+
 }

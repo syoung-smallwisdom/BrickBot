@@ -1,7 +1,19 @@
 # Uncomment this line to define a global platform for your project
 platform :ios, '8.0'
 
-pod 'Bean-iOS-OSX-SDK'
+def sharedPods
+    pod 'Bean-iOS-OSX-SDK'
+end
+
+target "BrickBot" do
+    sharedPods
+end
+
+
+target "BrickBotTests" do
+    link_with "BrickBotTests"
+    sharedPods
+end
 
 
 

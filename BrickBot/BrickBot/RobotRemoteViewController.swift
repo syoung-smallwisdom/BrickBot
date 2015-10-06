@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
+class RobotRemoteViewController: UIViewController, BBRobotManagerDelegate {
 
     // UI
     @IBOutlet weak var screenButton: SWPanTiltControl!
@@ -20,10 +20,10 @@ class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
     @IBOutlet weak var robotNameLabel: UILabel!
     
     // Robot
-    lazy var robotManager: RobotManager = {
-        return (UIApplication.isSimulator() ? SimulatedRobotManager() : BeanRobotManager()) as RobotManager
-        }()
-    var robot:BrickBotRobot? {
+    lazy var robotManager: BBRobotManager = {
+        return (UIApplication.isSimulator() ? SimulatedRobotManager() : BeanRobotManager()) as BBRobotManager
+    }()
+    var robot:BBRobot? {
         return robotManager.connectedRobot
     }
 
@@ -40,6 +40,11 @@ class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
         // When the app enters/exits foreground we want to disconnect the remote control
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"willEnterForeground", name:UIApplicationWillEnterForegroundNotification, object:nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"didEnterBackground", name:UIApplicationDidEnterBackgroundNotification, object:nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        robotNameLabel.text = robot?.robotName
     }
     
     @IBAction func didTouchUp(sender: AnyObject) {
@@ -97,18 +102,19 @@ class RobotRemoteViewController: UIViewController, RobotManagerDelegate {
     
     // MARK: - RobotManagerDelegate
     
-    func didConnectRobot(robotManager: RobotManager, robot: BrickBotRobot) {
+    func didConnectRobot(robotManager: BBRobotManager, robot: BBRobot) {
         ballView.connected = true
         settingsButton.enabled = true
         robotNameLabel.text = robot.robotName
     }
     
-    func didDisconnectRobot(robotManager: RobotManager, robot: BrickBotRobot) {
+    func didDisconnectRobot(robotManager: BBRobotManager, robot: BBRobot) {
         ballView.connected = false
         settingsButton.enabled = false
+        robotNameLabel.text = ""
     }
     
-    func didTimeoutDiscovery(robotManager: RobotManager) {
+    func didTimeoutDiscovery(robotManager: BBRobotManager) {
         // TODO: Revist UI/UX of automatically attempting to connect to the next available robot when not. syoung 9/27/2015
         robotManager.connectNextAvailableRobot()
     }

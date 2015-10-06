@@ -7,50 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30283E077B245B6C16059D4C /* libPods-BrickBotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D69377FD52064ACF46B0306 /* libPods-BrickBotTests.a */; };
 		719FD3C3C5002FE97042C291 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D2B9097D0ACD12479BEA0F /* libPods.a */; };
+		F6277025393C0C9315CEF1EF /* libPods-BrickBot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3090D65DA9655E2DFFF34965 /* libPods-BrickBot.a */; };
 		FB1F1E671BC2ECD500D6BA25 /* UIApplication+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1E661BC2ECD500D6BA25 /* UIApplication+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
-		FB1F1E681BC2ECD500D6BA25 /* UIApplication+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1E661BC2ECD500D6BA25 /* UIApplication+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
-		FB1F1E691BC2ECD500D6BA25 /* UIApplication+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1E661BC2ECD500D6BA25 /* UIApplication+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E7A1BC34C0900D6BA25 /* RobotRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E7B1BC34C0D00D6BA25 /* RobotSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062251BBA6CF200F3267D /* RobotSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E7E1BC34C1600D6BA25 /* BeanRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E851BC34C1F00D6BA25 /* SWSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D891BBDFA30004F5E10 /* SWSettingsButton.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E861BC34C1F00D6BA25 /* SWArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D7C1BBCF354004F5E10 /* SWArrowButton.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E871BC34C1F00D6BA25 /* CalibrationDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D871BBDCFB2004F5E10 /* CalibrationDial.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E881BC34C1F00D6BA25 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0620F1BB9F0E700F3267D /* BallView.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E891BC34C1F00D6BA25 /* SWPanControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061F71BB9E46300F3267D /* SWPanControl.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E8A1BC34C1F00D6BA25 /* SWTiltControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062791BBC796700F3267D /* SWTiltControl.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E8B1BC34C2300D6BA25 /* UIAlertController+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E8C1BC34C2300D6BA25 /* UIStoryboardSegue+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D8B1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E8D1BC34C2300D6BA25 /* UIApplication+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1E661BC2ECD500D6BA25 /* UIApplication+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1E8F1BC34C6400D6BA25 /* SimulatedRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EF01BC39FCB00D6BA25 /* BBMotorCalibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EEC1BC39FCB00D6BA25 /* BBMotorCalibration.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EF11BC39FCB00D6BA25 /* BBRobotPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EED1BC39FCB00D6BA25 /* BBRobotPosition.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EF21BC39FCB00D6BA25 /* BBRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EEE1BC39FCB00D6BA25 /* BBRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EF31BC39FCB00D6BA25 /* BBRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EEF1BC39FCB00D6BA25 /* BBRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EF51BC3A03C00D6BA25 /* BBRobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EF41BC3A03C00D6BA25 /* BBRobotTests.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EFA1BC3A0F300D6BA25 /* BBMotorCalibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EEC1BC39FCB00D6BA25 /* BBMotorCalibration.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EFB1BC3A0F300D6BA25 /* BBRobotPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EED1BC39FCB00D6BA25 /* BBRobotPosition.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EFC1BC3A0F300D6BA25 /* BBRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EEE1BC39FCB00D6BA25 /* BBRobot.swift */; settings = {ASSET_TAGS = (); }; };
+		FB1F1EFD1BC3A0F300D6BA25 /* BBRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F1EEF1BC39FCB00D6BA25 /* BBRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
 		FB694D7D1BBCF354004F5E10 /* SWArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D7C1BBCF354004F5E10 /* SWArrowButton.swift */; settings = {ASSET_TAGS = (); }; };
 		FB694D881BBDCFB2004F5E10 /* CalibrationDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D871BBDCFB2004F5E10 /* CalibrationDial.swift */; settings = {ASSET_TAGS = (); }; };
 		FB694D8A1BBDFA30004F5E10 /* SWSettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D891BBDFA30004F5E10 /* SWSettingsButton.swift */; settings = {ASSET_TAGS = (); }; };
 		FB694D8C1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D8B1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
-		FB694D8D1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D8B1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
-		FB694D8E1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB694D8B1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA061F91BB9E46300F3267D /* SWPanControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061F71BB9E46300F3267D /* SWPanControl.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA061FA1BB9E46300F3267D /* RobotRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA061FD1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA061FE1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA061FF1BB9E73B00F3267D /* RobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FC1BB9E73B00F3267D /* RobotManager.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062001BB9E73B00F3267D /* RobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FC1BB9E73B00F3267D /* RobotManager.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062041BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062051BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062061BB9EC0700F3267D /* SimulatedBrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062071BB9EC0C00F3267D /* BrickBotRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062081BB9EC1000F3267D /* RobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA061FC1BB9E73B00F3267D /* RobotManager.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA0620A1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA0620B1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA0620C1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA062101BB9F0E700F3267D /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0620F1BB9F0E700F3267D /* BallView.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062111BB9F0E800F3267D /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0620F1BB9F0E700F3267D /* BallView.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062121BB9F0E800F3267D /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0620F1BB9F0E700F3267D /* BallView.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA0621D1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA0621E1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA0621F1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA062221BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062231BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062241BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA062261BBA6CF200F3267D /* RobotSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062251BBA6CF200F3267D /* RobotSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062271BBA6CF200F3267D /* RobotSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062251BBA6CF200F3267D /* RobotSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA062281BBA6CF200F3267D /* RobotSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062251BBA6CF200F3267D /* RobotSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		FBA0627A1BBC796700F3267D /* SWTiltControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062791BBC796700F3267D /* SWTiltControl.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA0627B1BBC796700F3267D /* SWTiltControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062791BBC796700F3267D /* SWTiltControl.swift */; settings = {ASSET_TAGS = (); }; };
-		FBA0627C1BBC796700F3267D /* SWTiltControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062791BBC796700F3267D /* SWTiltControl.swift */; settings = {ASSET_TAGS = (); }; };
+		FBC4A5E81BC507E100F3F906 /* BBMotorCalibrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4A5E71BC507E100F3F906 /* BBMotorCalibrationTests.swift */; settings = {ASSET_TAGS = (); }; };
+		FBC4A7631BC86F3500F3F906 /* BeanRobotManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4A7621BC86F3500F3F906 /* BeanRobotManagerTests.swift */; settings = {ASSET_TAGS = (); }; };
 		FBDAEEC51BB9E25500066995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAEEC41BB9E25500066995 /* AppDelegate.swift */; };
 		FBDAEECA1BB9E25500066995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEEC81BB9E25500066995 /* Main.storyboard */; };
 		FBDAEECC1BB9E25500066995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEECB1BB9E25500066995 /* Assets.xcassets */; };
 		FBDAEECF1BB9E25500066995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEECD1BB9E25500066995 /* LaunchScreen.storyboard */; };
-		FBDAEEDA1BB9E25500066995 /* BrickBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAEED91BB9E25500066995 /* BrickBotTests.swift */; };
 		FBDAEEE51BB9E25500066995 /* BrickBotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAEEE41BB9E25500066995 /* BrickBotUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,37 +71,69 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FB1F1EB61BC37EBC00D6BA25 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB1F1EEA1BC3951200D6BA25 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2707BBB942FB5C0178DB7455 /* Pods-BrickBotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickBotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrickBotTests/Pods-BrickBotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3090D65DA9655E2DFFF34965 /* libPods-BrickBot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BrickBot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4189AEB01E1CF4CA5F751B87 /* Pods-BrickBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrickBot/Pods-BrickBot.debug.xcconfig"; sourceTree = "<group>"; };
+		467BB6F76E725B965F9D77A6 /* Pods-BrickBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrickBot/Pods-BrickBot.release.xcconfig"; sourceTree = "<group>"; };
+		5D69377FD52064ACF46B0306 /* libPods-BrickBotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BrickBotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD7BD9A2BC65C41F90D422D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8A992C48830A0C8685274351 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D13E38A3FD18AE62138E3600 /* Pods-BrickBotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrickBotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrickBotTests/Pods-BrickBotTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3D2B9097D0ACD12479BEA0F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB1F1E661BC2ECD500D6BA25 /* UIApplication+BrickBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+BrickBot.swift"; sourceTree = "<group>"; };
+		FB1F1EEC1BC39FCB00D6BA25 /* BBMotorCalibration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBMotorCalibration.swift; sourceTree = "<group>"; };
+		FB1F1EED1BC39FCB00D6BA25 /* BBRobotPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRobotPosition.swift; sourceTree = "<group>"; };
+		FB1F1EEE1BC39FCB00D6BA25 /* BBRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BBRobot.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FB1F1EEF1BC39FCB00D6BA25 /* BBRobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BBRobotManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FB1F1EF41BC3A03C00D6BA25 /* BBRobotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BBRobotTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FB694D7C1BBCF354004F5E10 /* SWArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWArrowButton.swift; sourceTree = "<group>"; };
 		FB694D871BBDCFB2004F5E10 /* CalibrationDial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationDial.swift; sourceTree = "<group>"; };
 		FB694D891BBDFA30004F5E10 /* SWSettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWSettingsButton.swift; sourceTree = "<group>"; };
 		FB694D8B1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboardSegue+BrickBot.swift"; sourceTree = "<group>"; };
 		FBA061F71BB9E46300F3267D /* SWPanControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWPanControl.swift; sourceTree = "<group>"; };
-		FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotRemoteViewController.swift; sourceTree = "<group>"; };
-		FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickBotRobot.swift; sourceTree = "<group>"; };
-		FBA061FC1BB9E73B00F3267D /* RobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotManager.swift; sourceTree = "<group>"; };
-		FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatedBrickBotRobot.swift; sourceTree = "<group>"; };
-		FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatedRobotManager.swift; sourceTree = "<group>"; };
+		FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RobotRemoteViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SimulatedRobotManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FBA0620F1BB9F0E700F3267D /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		FBA062131BBA019700F3267D /* BrickBot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrickBot-Bridging-Header.h"; sourceTree = "<group>"; };
 		FBA062141BBA019700F3267D /* BrickBotTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrickBotTests-Bridging-Header.h"; path = "../BrickBot/BrickBotTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		FBA062151BBA019700F3267D /* BrickBotUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrickBotUITests-Bridging-Header.h"; path = "../BrickBot/BrickBotUITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanRobotManager.swift; sourceTree = "<group>"; };
+		FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BeanRobotManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FBA062211BBA134000F3267D /* UIAlertController+BrickBot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+BrickBot.swift"; sourceTree = "<group>"; };
-		FBA062251BBA6CF200F3267D /* RobotSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotSettingsViewController.swift; sourceTree = "<group>"; };
+		FBA062251BBA6CF200F3267D /* RobotSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RobotSettingsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FBA062791BBC796700F3267D /* SWTiltControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTiltControl.swift; sourceTree = "<group>"; };
+		FBC4A5E71BC507E100F3F906 /* BBMotorCalibrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBMotorCalibrationTests.swift; sourceTree = "<group>"; };
+		FBC4A7621BC86F3500F3F906 /* BeanRobotManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanRobotManagerTests.swift; sourceTree = "<group>"; };
 		FBDAEEC11BB9E25500066995 /* BrickBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBDAEEC41BB9E25500066995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBDAEEC41BB9E25500066995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FBDAEEC91BB9E25500066995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBDAEECB1BB9E25500066995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBDAEECE1BB9E25500066995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBDAEED01BB9E25500066995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDAEED51BB9E25500066995 /* BrickBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrickBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBDAEED91BB9E25500066995 /* BrickBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickBotTests.swift; sourceTree = "<group>"; };
 		FBDAEEDB1BB9E25500066995 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDAEEE01BB9E25500066995 /* BrickBotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrickBotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDAEEE41BB9E25500066995 /* BrickBotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickBotUITests.swift; sourceTree = "<group>"; };
@@ -114,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				719FD3C3C5002FE97042C291 /* libPods.a in Frameworks */,
+				F6277025393C0C9315CEF1EF /* libPods-BrickBot.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30283E077B245B6C16059D4C /* libPods-BrickBotTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				E3D2B9097D0ACD12479BEA0F /* libPods.a */,
+				3090D65DA9655E2DFFF34965 /* libPods-BrickBot.a */,
+				5D69377FD52064ACF46B0306 /* libPods-BrickBotTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,23 +183,30 @@
 			children = (
 				7AD7BD9A2BC65C41F90D422D /* Pods.debug.xcconfig */,
 				8A992C48830A0C8685274351 /* Pods.release.xcconfig */,
+				2707BBB942FB5C0178DB7455 /* Pods-BrickBotTests.debug.xcconfig */,
+				D13E38A3FD18AE62138E3600 /* Pods-BrickBotTests.release.xcconfig */,
+				4189AEB01E1CF4CA5F751B87 /* Pods-BrickBot.debug.xcconfig */,
+				467BB6F76E725B965F9D77A6 /* Pods-BrickBot.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FBA062021BB9EBDB00F3267D /* Simulator */ = {
+		FB1F1E901BC3781300D6BA25 /* Robot Model */ = {
 			isa = PBXGroup;
 			children = (
-				FBA062031BB9EC0000F3267D /* SimulatedBrickBotRobot.swift */,
+				FB1F1EEC1BC39FCB00D6BA25 /* BBMotorCalibration.swift */,
+				FB1F1EED1BC39FCB00D6BA25 /* BBRobotPosition.swift */,
+				FB1F1EEE1BC39FCB00D6BA25 /* BBRobot.swift */,
+				FB1F1EEF1BC39FCB00D6BA25 /* BBRobotManager.swift */,
+				FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */,
 				FBA062091BB9EC2700F3267D /* SimulatedRobotManager.swift */,
 			);
-			name = Simulator;
+			name = "Robot Model";
 			sourceTree = "<group>";
 		};
 		FBA0620D1BB9F02400F3267D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FBDAEEC41BB9E25500066995 /* AppDelegate.swift */,
 				FBDAEECB1BB9E25500066995 /* Assets.xcassets */,
 				FBDAEECD1BB9E25500066995 /* LaunchScreen.storyboard */,
 				FBDAEED01BB9E25500066995 /* Info.plist */,
@@ -183,14 +226,6 @@
 				FBA062791BBC796700F3267D /* SWTiltControl.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		FBA0621B1BBA0BE600F3267D /* Bean */ = {
-			isa = PBXGroup;
-			children = (
-				FBA0621C1BBA0C0200F3267D /* BeanRobotManager.swift */,
-			);
-			name = Bean;
 			sourceTree = "<group>";
 		};
 		FBA062201BBA132100F3267D /* Extensions */ = {
@@ -228,15 +263,13 @@
 		FBDAEEC31BB9E25500066995 /* BrickBot */ = {
 			isa = PBXGroup;
 			children = (
+				FBDAEEC41BB9E25500066995 /* AppDelegate.swift */,
 				FBDAEEC81BB9E25500066995 /* Main.storyboard */,
 				FBA061F81BB9E46300F3267D /* RobotRemoteViewController.swift */,
 				FBA062251BBA6CF200F3267D /* RobotSettingsViewController.swift */,
-				FBA061FB1BB9E73B00F3267D /* BrickBotRobot.swift */,
-				FBA061FC1BB9E73B00F3267D /* RobotManager.swift */,
-				FBA0621B1BBA0BE600F3267D /* Bean */,
+				FB1F1E901BC3781300D6BA25 /* Robot Model */,
 				FBA0620E1BB9F0BE00F3267D /* Views */,
 				FBA062201BBA132100F3267D /* Extensions */,
-				FBA062021BB9EBDB00F3267D /* Simulator */,
 				FBA0620D1BB9F02400F3267D /* Support Files */,
 			);
 			path = BrickBot;
@@ -246,8 +279,10 @@
 			isa = PBXGroup;
 			children = (
 				FBA062141BBA019700F3267D /* BrickBotTests-Bridging-Header.h */,
-				FBDAEED91BB9E25500066995 /* BrickBotTests.swift */,
 				FBDAEEDB1BB9E25500066995 /* Info.plist */,
+				FBC4A5E71BC507E100F3F906 /* BBMotorCalibrationTests.swift */,
+				FB1F1EF41BC3A03C00D6BA25 /* BBRobotTests.swift */,
+				FBC4A7621BC86F3500F3F906 /* BeanRobotManagerTests.swift */,
 			);
 			path = BrickBotTests;
 			sourceTree = "<group>";
@@ -274,6 +309,8 @@
 				FBDAEEBE1BB9E25500066995 /* Frameworks */,
 				FBDAEEBF1BB9E25500066995 /* Resources */,
 				41E0C9A9B11BE0F06E44954A /* Copy Pods Resources */,
+				FB1F1EB61BC37EBC00D6BA25 /* Embed Frameworks */,
+				FB1F1EEA1BC3951200D6BA25 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -288,9 +325,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBDAEEEC1BB9E25500066995 /* Build configuration list for PBXNativeTarget "BrickBotTests" */;
 			buildPhases = (
+				95B403390466E8670716ED38 /* Check Pods Manifest.lock */,
 				FBDAEED11BB9E25500066995 /* Sources */,
 				FBDAEED21BB9E25500066995 /* Frameworks */,
 				FBDAEED31BB9E25500066995 /* Resources */,
+				B669EF5DE14771BCE2AE5681 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,10 +373,14 @@
 					FBDAEEC01BB9E25500066995 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = QMHQD2VUPF;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					FBDAEED41BB9E25500066995 = {
 						CreatedOnToolsVersion = 7.0;
-						TestTargetID = FBDAEEC01BB9E25500066995;
 					};
 					FBDAEEDF1BB9E25500066995 = {
 						CreatedOnToolsVersion = 7.0;
@@ -405,7 +448,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrickBot/Pods-BrickBot-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7ABC66A8A364AEB050EB86B1 /* Check Pods Manifest.lock */ = {
@@ -423,6 +466,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		95B403390466E8670716ED38 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B669EF5DE14771BCE2AE5681 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrickBotTests/Pods-BrickBotTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -431,13 +504,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBA0621D1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */,
-				FBA061FD1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */,
-				FBA062041BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */,
-				FBA061FF1BB9E73B00F3267D /* RobotManager.swift in Sources */,
 				FBA061F91BB9E46300F3267D /* SWPanControl.swift in Sources */,
 				FBDAEEC51BB9E25500066995 /* AppDelegate.swift in Sources */,
 				FB694D881BBDCFB2004F5E10 /* CalibrationDial.swift in Sources */,
+				FB1F1EF01BC39FCB00D6BA25 /* BBMotorCalibration.swift in Sources */,
 				FB694D8A1BBDFA30004F5E10 /* SWSettingsButton.swift in Sources */,
+				FB1F1EF31BC39FCB00D6BA25 /* BBRobotManager.swift in Sources */,
 				FBA0627A1BBC796700F3267D /* SWTiltControl.swift in Sources */,
 				FBA0620A1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */,
 				FB1F1E671BC2ECD500D6BA25 /* UIApplication+BrickBot.swift in Sources */,
@@ -446,7 +518,9 @@
 				FB694D8C1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift in Sources */,
 				FBA062261BBA6CF200F3267D /* RobotSettingsViewController.swift in Sources */,
 				FBA062101BB9F0E700F3267D /* BallView.swift in Sources */,
+				FB1F1EF21BC39FCB00D6BA25 /* BBRobot.swift in Sources */,
 				FB694D7D1BBCF354004F5E10 /* SWArrowButton.swift in Sources */,
+				FB1F1EF11BC39FCB00D6BA25 /* BBRobotPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,18 +528,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA062231BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */,
-				FBA0620B1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */,
-				FBA061FE1BB9E73B00F3267D /* BrickBotRobot.swift in Sources */,
-				FB694D8D1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift in Sources */,
-				FB1F1E681BC2ECD500D6BA25 /* UIApplication+BrickBot.swift in Sources */,
-				FBA062051BB9EC0000F3267D /* SimulatedBrickBotRobot.swift in Sources */,
-				FBA0621E1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */,
-				FBA062111BB9F0E800F3267D /* BallView.swift in Sources */,
-				FBDAEEDA1BB9E25500066995 /* BrickBotTests.swift in Sources */,
-				FBA0627B1BBC796700F3267D /* SWTiltControl.swift in Sources */,
-				FBA062001BB9E73B00F3267D /* RobotManager.swift in Sources */,
-				FBA062271BBA6CF200F3267D /* RobotSettingsViewController.swift in Sources */,
+				FB1F1E851BC34C1F00D6BA25 /* SWSettingsButton.swift in Sources */,
+				FB1F1E7A1BC34C0900D6BA25 /* RobotRemoteViewController.swift in Sources */,
+				FB1F1E8B1BC34C2300D6BA25 /* UIAlertController+BrickBot.swift in Sources */,
+				FB1F1E861BC34C1F00D6BA25 /* SWArrowButton.swift in Sources */,
+				FB1F1EFA1BC3A0F300D6BA25 /* BBMotorCalibration.swift in Sources */,
+				FB1F1E8D1BC34C2300D6BA25 /* UIApplication+BrickBot.swift in Sources */,
+				FB1F1EFD1BC3A0F300D6BA25 /* BBRobotManager.swift in Sources */,
+				FB1F1E8C1BC34C2300D6BA25 /* UIStoryboardSegue+BrickBot.swift in Sources */,
+				FBC4A5E81BC507E100F3F906 /* BBMotorCalibrationTests.swift in Sources */,
+				FB1F1E881BC34C1F00D6BA25 /* BallView.swift in Sources */,
+				FB1F1E8A1BC34C1F00D6BA25 /* SWTiltControl.swift in Sources */,
+				FB1F1E7E1BC34C1600D6BA25 /* BeanRobotManager.swift in Sources */,
+				FB1F1E891BC34C1F00D6BA25 /* SWPanControl.swift in Sources */,
+				FB1F1EF51BC3A03C00D6BA25 /* BBRobotTests.swift in Sources */,
+				FB1F1E7B1BC34C0D00D6BA25 /* RobotSettingsViewController.swift in Sources */,
+				FB1F1E8F1BC34C6400D6BA25 /* SimulatedRobotManager.swift in Sources */,
+				FB1F1EFC1BC3A0F300D6BA25 /* BBRobot.swift in Sources */,
+				FB1F1E871BC34C1F00D6BA25 /* CalibrationDial.swift in Sources */,
+				FBC4A7631BC86F3500F3F906 /* BeanRobotManagerTests.swift in Sources */,
+				FB1F1EFB1BC3A0F300D6BA25 /* BBRobotPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,18 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA062241BBA134000F3267D /* UIAlertController+BrickBot.swift in Sources */,
-				FBA0620C1BB9EC2700F3267D /* SimulatedRobotManager.swift in Sources */,
 				FBDAEEE51BB9E25500066995 /* BrickBotUITests.swift in Sources */,
-				FB694D8E1BBEF70E004F5E10 /* UIStoryboardSegue+BrickBot.swift in Sources */,
-				FB1F1E691BC2ECD500D6BA25 /* UIApplication+BrickBot.swift in Sources */,
-				FBA062061BB9EC0700F3267D /* SimulatedBrickBotRobot.swift in Sources */,
-				FBA0621F1BBA0C0200F3267D /* BeanRobotManager.swift in Sources */,
-				FBA062121BB9F0E800F3267D /* BallView.swift in Sources */,
-				FBA062081BB9EC1000F3267D /* RobotManager.swift in Sources */,
-				FBA0627C1BBC796700F3267D /* SWTiltControl.swift in Sources */,
-				FBA062071BB9EC0C00F3267D /* BrickBotRobot.swift in Sources */,
-				FBA062281BBA6CF200F3267D /* RobotSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +679,7 @@
 		};
 		FBDAEEEA1BB9E25500066995 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AD7BD9A2BC65C41F90D422D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 4189AEB01E1CF4CA5F751B87 /* Pods-BrickBot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -626,7 +697,7 @@
 		};
 		FBDAEEEB1BB9E25500066995 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A992C48830A0C8685274351 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 467BB6F76E725B965F9D77A6 /* Pods-BrickBot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -643,8 +714,8 @@
 		};
 		FBDAEEED1BB9E25500066995 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2707BBB942FB5C0178DB7455 /* Pods-BrickBotTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BrickBotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -652,21 +723,19 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBotTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrickBot.app/BrickBot";
 			};
 			name = Debug;
 		};
 		FBDAEEEE1BB9E25500066995 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D13E38A3FD18AE62138E3600 /* Pods-BrickBotTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BrickBotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smallwisdom.BrickBotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BrickBot/BrickBotTests-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrickBot.app/BrickBot";
 			};
 			name = Release;
 		};

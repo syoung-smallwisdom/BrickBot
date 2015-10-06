@@ -10,13 +10,13 @@ import UIKit
 
 class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
-    var robotManager:RobotManager!
-    var robot:BrickBotRobot? {
+    var robotManager:BBRobotManager!
+    var robot:BBRobot? {
         return robotManager.connectedRobot
     }
     
     var selectedIndex = 1   // Forward
-    var motorCalibration = BrickBotMotorCalibration()
+    var motorCalibration = BBMotorCalibration()
     var motorCalibrationChanged = false
     
     @IBOutlet weak var robotNameTextField: UITextField!
@@ -44,7 +44,7 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
         // setup initial values
         robotNameTextField.text = robot?.robotName ?? generateRandomName()
         
-        robotManager.readMotorCalibration { [weak self](calibration:BrickBotMotorCalibration?) -> () in
+        robotManager.readMotorCalibration { [weak self](calibration:BBMotorCalibration?) -> () in
             guard let calibration = calibration, let strongSelf = self else { return }
             strongSelf.motorCalibration = calibration
             strongSelf.calibrationDial.dialPosition = calibration.calibrationStates[strongSelf.selectedIndex]
@@ -127,7 +127,8 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
 
     @IBAction func calibrationDialPositionChanged(sender: AnyObject) {
         motorCalibrationChanged = true
-        motorCalibration.calibrationStates[selectedIndex] = calibrationDial.dialPosition
+        
+        motorCalibration.setCalibration(selectedIndex, value:calibrationDial.dialPosition)
         robot?.sendMotorCalibration(motorCalibration)
     }
     
@@ -151,9 +152,9 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         // there is no longer a check for string length for a Swift string so bridge to obj-c
-        let currentString: NSString = textField.text ?? ""
-        let addString: NSString = string
-        return currentString.length - range.length + addString.length <= (robot?.maxRobotNameLength ?? 10)
+        let currentLength = textField.text?.lengthOfBytesUsingEncoding(BBNameStringEncoding) ?? 0
+        let addLength = string.lengthOfBytesUsingEncoding(BBNameStringEncoding)
+        return currentLength - range.length + addLength <= (robot?.maxRobotNameLength ?? 20)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
