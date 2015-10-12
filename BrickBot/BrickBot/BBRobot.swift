@@ -33,64 +33,24 @@ public enum BBControlFlag: UInt8 {
     case Autopilot = 0xF1
     case MotorCalibration = 0xF2
     case ResetCalibration = 0xF3
+    case LeftMotorChanged = 0xF4
+    case RightMotorChanged = 0xF5
 }
 
-public extension BBMessageTransmitter {
+public struct BBRobotMessagePacket {
     
-    /**
-    * Send a message to the robot with the current position (Forward/Reverse/Left/Right) and whether
-    * or not the remote is turned on. This is sent as a 2 Byte message where the first byte is the
-    * "control" and the second byte is the struct defining the data. Swift does not play nicely with
-    * C structs and so I am using bit shifting to build the data struct. syoung 09/28/2015
-    */
-    func sendBallPosition(ballPosition: CGPoint, remoteOn: Bool) {
-        if (remoteOn) {
-            sendPosition(BBRobotPosition(ballPosition: ballPosition))
-        }
-        else {
-            sendPosition(nil)
-        }
+    let robotUUID: NSUUID
+    let data: NSData
+    var received = false
+    let timestamp: NSDate = NSDate()
+    
+    func isMatching(robotUUID: NSUUID, data: NSData) -> Bool {
+        return robotUUID == self.robotUUID && data == self.data;
     }
     
-    func sendPosition(position: BBRobotPosition?) {
-        let controlByte = position?.rawValue ?? 0
-        let data = NSData(bytes:[BBControlFlag.Remote.rawValue, controlByte] as [UInt8], length:2)
-        print("sendPosition:\(data)");
-        self.sendSerialData(data)
+    func isExpired() -> Bool {
+        return (timestamp.timeIntervalSinceNow > 60) || (timestamp.timeIntervalSinceNow > 5 && !received);
     }
-    
-    /**
-    * Send a message to the robot with the motor calibration data. This is *not* automatically saved
-    * to the robot, but will dynamically update the calibration values on the robot.
-    */
-    func sendMotorCalibration(calibration: BBMotorCalibration) {
-        var bytes = calibration.bytes()
-        print("motorCalibration:\(bytes)");
-        bytes.insert(BBControlFlag.MotorCalibration.rawValue, atIndex: 0)
-        let data = NSData(bytes:bytes, length:bytes.count)
-        print("sendMotorCalibration:\(data)");
-        self.sendSerialData(data)
-    }
-    
-    /**
-    * Send a message to the robot to reset the calibration state
-    */
-    func sendResetCalibration() {
-        let data = NSData(bytes:[BBControlFlag.ResetCalibration.rawValue] as [UInt8], length:1)
-        print("sendResetCalibration:\(data)");
-        self.sendSerialData(data)
-    }
-    
-    /**
-    * Send a message to the robot with whether or not the autopilot (roving) mode should be ON. The
-    * autopilot is turned OFF by default when a BLE central device is connected to the peripheral.
-    */
-    func sendAutopilotOn(autopilotOn: Bool) {
-        let data = NSData(bytes:[BBControlFlag.Autopilot.rawValue, autopilotOn ? 1 : 0] as [UInt8], length:2)
-        print("sendAutopilotOn:\(data)");
-        self.sendSerialData(data)
-    }
-    
 }
 
 public extension BBRobot {

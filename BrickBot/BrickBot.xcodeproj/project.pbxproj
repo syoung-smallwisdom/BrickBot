@@ -47,6 +47,7 @@
 		FBA0627A1BBC796700F3267D /* SWTiltControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA062791BBC796700F3267D /* SWTiltControl.swift */; settings = {ASSET_TAGS = (); }; };
 		FBC4A5E81BC507E100F3F906 /* BBMotorCalibrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4A5E71BC507E100F3F906 /* BBMotorCalibrationTests.swift */; settings = {ASSET_TAGS = (); }; };
 		FBC4A7631BC86F3500F3F906 /* BeanRobotManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC4A7621BC86F3500F3F906 /* BeanRobotManagerTests.swift */; settings = {ASSET_TAGS = (); }; };
+		FBCAFBFA1BCC749D00A1F450 /* BBRobotManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAFBF91BCC749D00A1F450 /* BBRobotManagerTests.swift */; settings = {ASSET_TAGS = (); }; };
 		FBDAEEC51BB9E25500066995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAEEC41BB9E25500066995 /* AppDelegate.swift */; };
 		FBDAEECA1BB9E25500066995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEEC81BB9E25500066995 /* Main.storyboard */; };
 		FBDAEECC1BB9E25500066995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDAEECB1BB9E25500066995 /* Assets.xcassets */; };
@@ -127,6 +128,7 @@
 		FBA062791BBC796700F3267D /* SWTiltControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWTiltControl.swift; sourceTree = "<group>"; };
 		FBC4A5E71BC507E100F3F906 /* BBMotorCalibrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBMotorCalibrationTests.swift; sourceTree = "<group>"; };
 		FBC4A7621BC86F3500F3F906 /* BeanRobotManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanRobotManagerTests.swift; sourceTree = "<group>"; };
+		FBCAFBF91BCC749D00A1F450 /* BBRobotManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBRobotManagerTests.swift; sourceTree = "<group>"; };
 		FBDAEEC11BB9E25500066995 /* BrickBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDAEEC41BB9E25500066995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FBDAEEC91BB9E25500066995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				FBDAEEDB1BB9E25500066995 /* Info.plist */,
 				FBC4A5E71BC507E100F3F906 /* BBMotorCalibrationTests.swift */,
 				FB1F1EF41BC3A03C00D6BA25 /* BBRobotTests.swift */,
+				FBCAFBF91BCC749D00A1F450 /* BBRobotManagerTests.swift */,
 				FBC4A7621BC86F3500F3F906 /* BeanRobotManagerTests.swift */,
 			);
 			path = BrickBotTests;
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBCAFBFA1BCC749D00A1F450 /* BBRobotManagerTests.swift in Sources */,
 				FB1F1E851BC34C1F00D6BA25 /* SWSettingsButton.swift in Sources */,
 				FB1F1E7A1BC34C0900D6BA25 /* RobotRemoteViewController.swift in Sources */,
 				FB1F1E8B1BC34C2300D6BA25 /* UIAlertController+BrickBot.swift in Sources */,

@@ -69,7 +69,8 @@ class CalibrationDial: SWPanControl {
     }
     
     private func updateLayerProperties() {
-        valueLabel?.text = String(dialPosition)
+        valueLabel?.text = String(Int(round(dialPosition * BBMotorCalibrationMaxOffset + BBMotorCalibrationCenter)))
+        
         if leftLayer != nil {
             leftLayer.path = calculateLeftPath().CGPath
             leftLayer.fillColor = UIColor.redColor().CGColor

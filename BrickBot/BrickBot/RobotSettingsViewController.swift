@@ -56,12 +56,12 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
         super.viewWillDisappear(animated)
         
         // turn off the motors when exiting the view
-        robot?.sendBallPosition(CGPointZero, remoteOn: false)
+        robotManager.sendBallPosition(CGPointZero, remoteOn: false)
     }
     
     @IBAction func cancelTapped(sender: AnyObject) {
         if motorCalibrationChanged {
-            robot?.sendResetCalibration()
+            robotManager.sendResetCalibration()
         }
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -114,10 +114,10 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
     
     @IBAction func motorSwitchChanged(sender: AnyObject) {
         if (motorSwitch.on) {
-            robot?.sendBallPosition(CGPointMake(CGFloat(selectedIndex - 1), 1), remoteOn: true)
+            robotManager.sendBallPosition(CGPointMake(CGFloat(selectedIndex - 1), 1), remoteOn: true)
         }
         else {
-            robot?.sendBallPosition(CGPointZero, remoteOn: false)
+            robotManager.sendBallPosition(CGPointZero, remoteOn: false)
         }
     }
     
@@ -129,7 +129,7 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
         motorCalibrationChanged = true
         
         motorCalibration.setCalibration(selectedIndex, value:calibrationDial.dialPosition)
-        robot?.sendMotorCalibration(motorCalibration)
+        robotManager.sendMotorCalibration(motorCalibration)
     }
     
     @IBAction func viewTapped(gesture: UIGestureRecognizer) {

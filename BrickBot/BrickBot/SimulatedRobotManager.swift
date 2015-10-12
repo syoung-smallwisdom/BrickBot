@@ -12,6 +12,8 @@ class SimulatedRobotManager: NSObject, BBRobotManager {
     
     weak var delegate: BBRobotManagerDelegate?
     
+    var messageCache: [BBControlFlag: BBRobotMessagePacket] = [:]
+    
     var connectedRobot: BBRobot? {
         return robot.connected ? robot : nil
     }
@@ -45,6 +47,10 @@ class SimulatedRobotManager: NSObject, BBRobotManager {
         dispatch_after(delayTime, dispatch_get_main_queue()) {
             completion(BBMotorCalibration())
         }
+    }
+    
+    func sendMessage(msgFlag: BBControlFlag, bytes: [UInt8]?) {
+        print("\nsendMessage \(msgFlag) \(bytes)");
     }
 }
 

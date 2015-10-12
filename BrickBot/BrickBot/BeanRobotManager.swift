@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, PTDBeanDelegate {
     
     // MARK: RobotManager
@@ -17,7 +19,9 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
     var connectedRobot: BBRobot?
     
     var discoveredRobots: [NSUUID: BBRobot] = [:]
-
+    
+    var messageCache: [BBControlFlag: BBRobotMessagePacket] = [:]
+    
     func connect() {
         if (beanManager == nil) {
             beanManager = PTDBeanManager(delegate: self)
@@ -59,7 +63,6 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
             didConnectRobot(robot)
         }
         else {
-
             connectPeriperal(robot)
         }
     }
@@ -81,7 +84,7 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
         readMotorCalibrationCompletion = completion
         bean.readScratchBank(BBScratchBank.MotorCalibration.rawValue)
     }
-    
+
     
     // MARK: Internal
     
@@ -183,7 +186,7 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
         
         // Check the data in the first scratch bank. If the data is not empty and the 
         // sketchId starts with the sketch ID we are looking for then connect.
-        if let name = BeanHelper.convertScratchDataToString(data, encoding: NSUTF8StringEncoding) where name.hasPrefix(BrickBotSketchIdPrefix) {
+        if let name = convertScratchDataToString(data, encoding: NSUTF8StringEncoding) where name.hasPrefix(BrickBotSketchIdPrefix) {
             // This is a robot bean, store it's type and add it to the list of known robots
             didConnectRobot(bean)
         }
@@ -192,6 +195,45 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
             beanManager?.disconnectBean(bean, error: nil)
         }
     }
+    
+    func didReadRobotName(bean: PTDBean!, data:NSData) {
+        if let name = convertScratchDataToString(data, encoding: BBNameStringEncoding) {
+            bean.robotName = name;
+        }
+        else if let name = bean.robotName {
+            bean.setScratchBank(BBScratchBank.RobotName.rawValue, data: name.dataUsingEncoding(BBNameStringEncoding))
+        }
+    }
+    
+    func didReadMotorCalibrationData(bean: PTDBean!, data:NSData) {
+        if (data.length >= BBMotorCalibrationState.Count.rawValue) {
+            bean.motorCalibrationData = data;
+        }
+        else if let data = bean.motorCalibrationData {
+            // set the scratch bank and then reset the calibration to update
+            bean.setScratchBank(BBScratchBank.MotorCalibration.rawValue, data: data)
+            self.sendResetCalibration()
+        }
+    }
+    
+    func convertScratchDataToString(data: NSData, encoding: NSStringEncoding) -> String? {
+        
+        guard (data.length > 0) else { return nil }
+        
+        // C++ Arduino string is zero padded so strip that char if necessary
+        var bytes = [UInt8](count: data.length, repeatedValue: 0)
+        data.getBytes(&bytes, length:data.length)
+        
+        var range = NSMakeRange(0, data.length);
+        if (bytes.count > 2 && bytes[bytes.count - 1] == 0x00) {
+            range.length -= 1;
+        }
+        
+        let str = String(data: data.subdataWithRange(range), encoding: encoding)
+        return str
+    }
+    
+
 
     // MARK: PTDBeanManagerDelegate
     
@@ -264,10 +306,10 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
             didReadSketchId(bean, data: data)
             
         case .RobotName:
-            bean.didReadRobotName(data)
+            didReadRobotName(bean, data: data)
             
         case .MotorCalibration:
-            bean.didReadMotorCalibrationData(data)
+            didReadMotorCalibrationData(bean, data: data)
             let motorCalibration = BBMotorCalibration(data: bean.motorCalibrationData)
             readMotorCalibrationCompletion?(motorCalibration)
         }
@@ -278,35 +320,9 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
     }
     
     func bean(bean: PTDBean!, serialDataReceived data: NSData!) {
-        if let debugStr = String(data:data, encoding:NSUTF8StringEncoding)  {
-            print("\n\(debugStr)")
-        }
+        didReceiveMessageResponse(bean, data: data)
     }
 }
-
-struct BeanHelper {
-    
-    /**
-    * Check the scratch data string for 0x00 padding byte at the end or zero length
-    */
-    static func convertScratchDataToString(data: NSData, encoding: NSStringEncoding) -> String? {
-        
-        guard (data.length > 0) else { return nil }
-        
-        // C++ Arduino string is zero padded so strip that char if necessary
-        var bytes = [UInt8](count: data.length, repeatedValue: 0)
-        data.getBytes(&bytes, length:data.length)
-        
-        var range = NSMakeRange(0, data.length);
-        if (bytes.count > 2 && bytes[bytes.count - 1] == 0x00) {
-            range.length -= 1;
-        }
-        
-        let str = String(data: data.subdataWithRange(range), encoding: encoding)
-        return str
-    }
-}
-
 
 extension PTDBean: BBRobot {
     
@@ -337,25 +353,6 @@ extension PTDBean: BBRobot {
         return "\(self.identifier.UUIDString)_MotorCalibrationKey"
     }
     
-    func didReadRobotName(inData:NSData) {
-        if let name = BeanHelper.convertScratchDataToString(inData, encoding: BBNameStringEncoding) {
-            self.robotName = name;
-        }
-        else if let name = self.robotName {
-            let data = name.dataUsingEncoding(BBNameStringEncoding)
-            self.setScratchBank(BBScratchBank.RobotName.rawValue, data: data)
-        }
-    }
-    
-    func didReadMotorCalibrationData(data:NSData) {
-        if (data.length >= BBMotorCalibrationState.Count.rawValue) {
-            self.motorCalibrationData = data;
-        }
-        else if let data = self.motorCalibrationData {
-            // set the scratch bank and then reset the calibration to update
-            self.setScratchBank(BBScratchBank.MotorCalibration.rawValue, data: data)
-            self.sendResetCalibration()
-        }
-    }
+
 
 }

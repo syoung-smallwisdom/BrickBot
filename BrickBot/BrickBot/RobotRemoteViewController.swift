@@ -62,7 +62,7 @@ class RobotRemoteViewController: UIViewController, BBRobotManagerDelegate {
     }
     
     @IBAction func autopilotChanged(sender: AnyObject) {
-        robot?.sendAutopilotOn(autopilotSwitch.on)
+        robotManager.sendAutopilotOn(autopilotSwitch.on)
     }
     
     var remoteOn:Bool {
@@ -87,7 +87,7 @@ class RobotRemoteViewController: UIViewController, BBRobotManagerDelegate {
             ballView.layoutIfNeeded()
             
             // Send ball position to the bean
-            robot?.sendBallPosition(ballPosition, remoteOn: remoteOn)
+            robotManager.sendBallPosition(ballPosition, remoteOn: remoteOn)
         }
     }
     
