@@ -60,7 +60,7 @@ class SimulatedBrickBotRobot: NSObject, BBRobot {
     
     var connected: Bool = false
     
-    var robotName: String?
+    var name: String! = "SimBot"
     
     var motorCalibrationData: NSData?
     

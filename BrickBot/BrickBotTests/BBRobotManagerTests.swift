@@ -183,6 +183,17 @@ class BBRobotManagerTests: XCTestCase {
         XCTAssertEqual(robot.serialData, NSData(bytes: [0xF2, 20, 146, 162] as [UInt8], length: 4))
     }
     
+    // MARK: - func sendRobotName(robotName: String)
+    
+    func testSaveRobotName() {
+        let robotManager = BBRobotManagerMock()
+        let robot = robotManager.connectedRobot as! BBRobotMock
+        let name = "Peter"
+        
+        robotManager.sendRobotName(name)
+        XCTAssertEqual(robot.serialData, NSData(bytes: [0xF5, 0x50, 0x65, 0x74, 0x65, 0x72, 0x00] as [UInt8], length: 7))
+    }
+    
     // MARK: - func didReceiveMessageResponse(robot: BBRobot, data: NSData)
     
     func testDidReceiveMessageResponse_SingleSendResponse() {

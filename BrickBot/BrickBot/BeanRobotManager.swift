@@ -114,7 +114,6 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
             // Query the name of the robot and the motor calibration
             let bean = robot as! PTDBean
             bean.readScratchBank(BBScratchBank.MotorCalibration.rawValue);
-            bean.readScratchBank(BBScratchBank.RobotName.rawValue);
         }
         else {
             resetTimer()
@@ -193,15 +192,6 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
         else {
             // Otherwise, disconnect
             beanManager?.disconnectBean(bean, error: nil)
-        }
-    }
-    
-    func didReadRobotName(bean: PTDBean!, data:NSData) {
-        if let name = convertScratchDataToString(data, encoding: BBNameStringEncoding) {
-            bean.robotName = name;
-        }
-        else if let name = bean.robotName {
-            bean.setScratchBank(BBScratchBank.RobotName.rawValue, data: name.dataUsingEncoding(BBNameStringEncoding))
         }
     }
     
@@ -293,20 +283,12 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
     }
     
     func bean(bean: PTDBean!, didUpdateScratchBank bank:Int, data:NSData) {
-
-        let mod = data.length%2;
-        
-        print("\ndidUpdateScratchBank bank:\(bank) data:\(data) mod:\(mod)")
-        
         // Check that this is a scratch bank that is reserved, otherwise ignore
         guard let scratchBank = BBScratchBank(rawValue: bank) else { return }
 
         switch (scratchBank) {
         case .SketchId:
             didReadSketchId(bean, data: data)
-            
-        case .RobotName:
-            didReadRobotName(bean, data: data)
             
         case .MotorCalibration:
             didReadMotorCalibrationData(bean, data: data)
@@ -326,20 +308,8 @@ final class BeanRobotManager: NSObject, BBRobotManager, PTDBeanManagerDelegate, 
 
 extension PTDBean: BBRobot {
     
-    // Robot name and motor calibration are stored locally in user defaults. The Bean doesn't save 
+    // Motor calibration is stored locally in user defaults. The Bean doesn't save
     // scratch bank data across power resets so this information is saved to the iOS device as a backup.
-    
-    public var robotName: String? {
-        get {
-            return NSUserDefaults.standardUserDefaults().stringForKey(robotNameKey)
-        }
-        set (newValue) {
-            NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: robotNameKey)
-        }
-    }
-    private var robotNameKey: String {
-        return "\(self.identifier.UUIDString)_RobotNameKey"
-    }
     
     public var motorCalibrationData: NSData?  {
         get {
@@ -352,7 +322,5 @@ extension PTDBean: BBRobot {
     private var motorCalibrationKey: String {
         return "\(self.identifier.UUIDString)_MotorCalibrationKey"
     }
-    
-
 
 }

@@ -183,7 +183,7 @@ typedef NS_ENUM(NSUInteger, PTDAdvertisingMode) {
  *  The Bean's name.
  *  For more info, refer to the [Apple name documentation](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBPeripheral_Class/translated_content/CBPeripheral.html#//apple_ref/occ/instp/CBPeripheral/name)
  */
-@property (nonatomic, readonly) NSString* name;
+@property (nonatomic, readwrite) NSString* name;
 /**
  *  The <PTDBeanDelegate> delegate object for the Bean. Set your class as the delegate to receive messages and responses from the Bean.
  */

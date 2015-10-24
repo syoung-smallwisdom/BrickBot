@@ -12,9 +12,9 @@ public protocol BBMessageTransmitter {
 }
 
 public protocol BBRobot: class, BBMessageTransmitter {
+    var name: String! { get set }
     var identifier: NSUUID! { get }
     var connected: Bool { get }
-    var robotName: String? { get set }
     var motorCalibrationData: NSData? { get set }
     func setScratchBank(bank: Int, data: NSData!)
 }
@@ -24,17 +24,19 @@ public let BBNameStringEncoding = NSUTF8StringEncoding
 
 public enum BBScratchBank: Int {
     case SketchId = 1
-    case RobotName = 2
     case MotorCalibration = 3
 }
 
 public enum BBControlFlag: UInt8 {
+    case LeftMotorChanged = 0xE0
+    case RightMotorChanged = 0xE1
+    
     case Remote = 0xF0
     case Autopilot = 0xF1
     case MotorCalibration = 0xF2
     case ResetCalibration = 0xF3
-    case LeftMotorChanged = 0xF4
-    case RightMotorChanged = 0xF5
+    case SaveCalibration = 0xF4
+    case SetName = 0xF5
 }
 
 public struct BBRobotMessagePacket {
@@ -60,20 +62,6 @@ public extension BBRobot {
     */
     var maxRobotNameLength: Int {
         return 20
-    }
-    
-    /**
-    * Save the robot name to the robot. This is different from the local save using the robotName setter.
-    */
-    func saveRobotName(robotName: String) {
-        guard robotName.lengthOfBytesUsingEncoding(BBNameStringEncoding) <= maxRobotNameLength else {
-            assertionFailure("Robot name is too long")
-            return
-        }
-        print("saveRobotName:\(robotName)");
-        let data = robotName.dataUsingEncoding(BBNameStringEncoding)
-        self.setScratchBank(BBScratchBank.RobotName.rawValue, data: data)
-        self.robotName = robotName
     }
     
     /**

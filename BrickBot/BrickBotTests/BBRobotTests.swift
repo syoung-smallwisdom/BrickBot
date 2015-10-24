@@ -20,35 +20,6 @@ class BBRobotTests: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: - func saveRobotName(robotName: String)
-    
-    func testSaveRobotName() {
-        let robot = BBRobotMock()
-        let name = "Peter"
-        robot.saveRobotName(name)
-        
-        // Name should be set
-        XCTAssertEqual(robot.robotName, name)
-        
-        // scratch bank should be set
-        let data = robot.scratchBankData[BBScratchBank.RobotName.rawValue]
-        XCTAssertEqual(data, name.dataUsingEncoding(BBNameStringEncoding))
-    }
-    
-    // MARK: - var setRobotName
-    
-    func testSetRobotName() {
-        let robot = BBRobotMock()
-        let name = "Peter"
-        
-        robot.robotName = name;
-        
-        // Name should be set
-        XCTAssertEqual(robot.robotName, name)
-        
-        // scratch bank should NOT be set
-        XCTAssertNil(robot.scratchBankData[BBScratchBank.RobotName.rawValue])
-    }
 
     // MARK: - func saveMotorCalibration(calibration: BrickBotMotorCalibration) 
     
@@ -77,7 +48,7 @@ class BBRobotMock: NSObject, BBRobot {
     
     var identifier: NSUUID! = NSUUID()
     var connected: Bool = false
-    var robotName: String?
+    var name: String! = "Unknown"
     var motorCalibrationData: NSData?
     var maxRobotNameLength: Int = 10
     

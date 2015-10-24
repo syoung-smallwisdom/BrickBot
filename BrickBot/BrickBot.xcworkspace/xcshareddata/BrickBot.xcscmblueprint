@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C5CD8AA65EC5B44CEA0F1D7A34CB6F88A5CB2B2A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "52D78461CB78CA69A4471C2DA471532C5A0C07D5" : 0,
+    "C5CD8AA65EC5B44CEA0F1D7A34CB6F88A5CB2B2A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "34E7E1B9-DBC2-4564-BFED-4EEC060D29B8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "52D78461CB78CA69A4471C2DA471532C5A0C07D5" : "..\/Arduino\/libraries\/BrickBot_Arduino",
+    "C5CD8AA65EC5B44CEA0F1D7A34CB6F88A5CB2B2A" : "BrickBot\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BrickBot",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BrickBot\/BrickBot.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/syoung-smallwisdom\/BrickBot_Arduino.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52D78461CB78CA69A4471C2DA471532C5A0C07D5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/syoung-smallwisdom\/BrickBot.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C5CD8AA65EC5B44CEA0F1D7A34CB6F88A5CB2B2A"
+    }
+  ]
+}

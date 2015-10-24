@@ -42,7 +42,7 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
         super.viewWillAppear(animated)
         
         // setup initial values
-        robotNameTextField.text = robot?.robotName ?? generateRandomName()
+        robotNameTextField.text = robot?.name ?? generateRandomName()
         
         robotManager.readMotorCalibration { [weak self](calibration:BBMotorCalibration?) -> () in
             guard let calibration = calibration, let strongSelf = self else { return }
@@ -67,8 +67,8 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
     }
 
     @IBAction func saveTapped(sender: AnyObject) {
-        if let robotName = robotNameTextField.text where robotName != robot?.robotName {
-            robot?.saveRobotName(robotName)
+        if let robotName = robotNameTextField.text where robotName != robot?.name {
+            robotManager.sendRobotName(robotName)
         }
         if motorCalibrationChanged {
             robot?.saveMotorCalibration(motorCalibration)

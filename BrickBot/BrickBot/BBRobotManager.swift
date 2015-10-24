@@ -139,6 +139,22 @@ public extension BBRobotManager {
     }
     
     /**
+    * Save the robot name to the robot. This is different from the local save using the robotName setter.
+    */
+    func sendRobotName(robotName: String) {
+        guard let robot = connectedRobot else { return }
+        var buffer = [UInt8](robotName.utf8)
+        guard buffer.count <= robot.maxRobotNameLength else {
+            assertionFailure("Robot name is too long")
+            return
+        }
+        buffer.append(0x00)
+        print("sendRobotName:\(robotName)");
+        self.sendMessage(.SetName, bytes: buffer)
+        robot.name = robotName
+    }
+    
+    /**
     * Received response from the robot manager
     */
     func didReceiveMessageResponse(robot: BBRobot, data: NSData) {

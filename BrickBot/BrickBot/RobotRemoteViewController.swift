@@ -44,7 +44,7 @@ class RobotRemoteViewController: UIViewController, BBRobotManagerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        robotNameLabel.text = robot?.robotName
+        robotNameLabel.text = robot?.name
     }
     
     @IBAction func didTouchUp(sender: AnyObject) {
@@ -105,7 +105,7 @@ class RobotRemoteViewController: UIViewController, BBRobotManagerDelegate {
     func didConnectRobot(robotManager: BBRobotManager, robot: BBRobot) {
         ballView.connected = true
         settingsButton.enabled = true
-        robotNameLabel.text = robot.robotName
+        robotNameLabel.text = robot.name
     }
     
     func didDisconnectRobot(robotManager: BBRobotManager, robot: BBRobot) {

@@ -89,10 +89,13 @@ typedef enum { //These occur in sequence
     return nil;
 }
 -(NSString*)name{
-    if(_peripheral.name){
+    if (_name) {
+        return _name;
+    }
+    else if(_peripheral.name) {
         return _peripheral.name;
     }
-    return [_advertisementData objectForKey:CBAdvertisementDataLocalNameKey]?[_advertisementData objectForKey:CBAdvertisementDataLocalNameKey]:@"Unknown";//Local Name
+    return [_advertisementData objectForKey:CBAdvertisementDataLocalNameKey] ?: @"Unknown";//Local Name
 }
 -(NSNumber*)RSSI{
     NSNumber* returnedRSSI;
