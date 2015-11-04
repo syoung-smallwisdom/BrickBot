@@ -131,6 +131,13 @@ public extension BBRobotManager {
     }
     
     /**
+    * Send a message to the robot to save the calibration state
+    */
+    func sendSaveCalibration() {
+        self.sendMessage(.SaveCalibration, bytes: nil)
+    }
+    
+    /**
     * Send a message to the robot with whether or not the autopilot (roving) mode should be ON. The
     * autopilot is turned OFF by default when a BLE central device is connected to the peripheral.
     */

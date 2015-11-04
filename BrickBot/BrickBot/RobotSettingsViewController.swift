@@ -71,7 +71,7 @@ class RobotSettingsViewController: UIViewController, UITextFieldDelegate, UIGest
             robotManager.sendRobotName(robotName)
         }
         if motorCalibrationChanged {
-            robot?.saveMotorCalibration(motorCalibration)
+            robotManager.sendSaveCalibration()
         }
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

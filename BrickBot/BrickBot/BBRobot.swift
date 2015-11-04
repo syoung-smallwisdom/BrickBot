@@ -64,16 +64,4 @@ public extension BBRobot {
         return 20
     }
     
-    /**
-    * Save the motor calibration data. This is different from a send in that a "send" sets it temporarily 
-    * to the robot. This saves to the robot memory.
-    */
-    func saveMotorCalibration(calibration: BBMotorCalibration) {
-        let bytes = calibration.bytes()
-        print("saveMotorCalibration:\(bytes)");
-        let data = NSData(bytes:bytes, length:bytes.count)
-        self.setScratchBank(BBScratchBank.MotorCalibration.rawValue, data: data)
-        self.motorCalibrationData = data
-    }
-    
 }
